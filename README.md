@@ -1,4 +1,4 @@
-# mGauge (An organizational performance tool to gauge, track, and manage team performance) -- Under Development
+# mGauge -- Under Development
 
 ## Project setup
 ```
