@@ -1,4 +1,4 @@
-# gauge-app
+# Organizational Performance Gauge (prototype)
 
 ## Project setup
 ```
