@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gaugeapp-dev-142302-authRole",
+      "UnauthRoleArn": "arn:aws:iam::692490654217:role/amplify-gaugeapp-dev-142302-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::692490654217:role/amplify-gaugeapp-dev-142302-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gaugeapp-dev-142302-deployment",
+      "UnauthRoleName": "amplify-gaugeapp-dev-142302-unauthRole",
+      "StackName": "amplify-gaugeapp-dev-142302",
+      "StackId": "arn:aws:cloudformation:us-east-1:692490654217:stack/amplify-gaugeapp-dev-142302/1f7943d0-256c-11ed-9c44-0a259a55269d",
+      "AmplifyAppId": "d30t19km7frel7"
+    },
+    "categories": {
+      "auth": {
+        "gaugeapp84d1f10e": {}
+      }
+    }
+  }
+}
