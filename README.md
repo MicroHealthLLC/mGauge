@@ -1,4 +1,4 @@
-# Organizational Performance Gauge (prototype)
+# mGauge -- Under Development
 
 ## Project setup
 ```
