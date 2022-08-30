@@ -1,79 +1,68 @@
 <template>
   <div id="">
- <vue-speedometer/>
+    <vue-speedometer :forceRender=true :value=85 :maxValue=100 :segments="3"
+      :segmentColors='["tomato", "gold", "limegreen"]' needleColor="black" :customSegmentStops='[0, 75, 90, 100]'
+      :customSegmentLabels='[
+        {
+          text: "Bad",
+          position: "OUTSIDE",
+          color: "#555",
+        },
+        {
+          text: "Ok",
+          position: "OUTSIDE",
+          color: "#555",
+          fontSize: "19px",
+        },
+        {
+          text: "Good",
+          position: "OUTSIDE",
+          color: "#555",
+        },
+      ]' />
+    <vue-speedometer :forceRender=true :value=50 :maxValue=100 :width=500 :needleHeightRatio=.8 needleColor="black"
+      :paddingVertical=10 :ringWidth=80 :customSegmentStops='[0, 30, 45, 55, 70, 100]'
+      :segmentColors='["tomato", "gold", "limegreen", "gold", "tomato"]' :customSegmentLabels='[
+        {
+          text: "Bad",
+          position: "OUTSIDE",
+          color: "black",
+          fontSize: "20px"
+        },
+        {
+          text: "Ok",
+          position: "OUTSIDE",
+          color: "black",
+          fontSize: "20px"
+        },
+        {
+          text: "Good",
+          position: "OUTSIDE",
+          color: "black",
+          fontSize: "20px"
+        },
+        {
+          text: "Ok",
+          position: "OUTSIDE",
+          color: "black",
+          fontSize: "20px"
+        },
+        {
+          text: "Bad",
+          position: "OUTSIDE",
+          color: "black",
+          fontSize: "20px"
+        },
+      ]' />
   </div>
 </template>
 
 <script>
 import VueSpeedometer from "vue-speedometer"
 
-// export const ig = () => `
-//   <div>
-//     <vue-speedometer
-//       :needleHeightRatio="0.7"
-//       :maxSegmentLabels="5"
-//       :segments="75"
-//       :value="333"
-//       textColor="${textColor}"
-//     />
-//   </div>
-// `
 export default {
   name: 'Gauge',
-  components: { VueSpeedometer }, 
-   template: `<vue-speedometer />`,
-  // template: `
-  //   <div>
-  //     <vue-speedometer 
-  //     :width="500"
-  //     :needleHeightRatio="0.7"
-  //     :value="777"
-  //     currentValueText="Happiness Level"
-  //     :customSegmentLabels='[
-  //       {
-  //         text: "Very Bad",
-  //         position: "INSIDE",
-  //         color: "#555",
-  //       },
-  //       {
-  //         text: "Bad",
-  //         position: "INSIDE",
-  //         color: "#555",
-  //       },
-  //       {
-  //         text: "Ok",
-  //         position: "INSIDE",
-  //         color: "#555",
-  //         fontSize: "19px",
-  //       },
-  //       {
-  //         text: "Good",
-  //         position: "INSIDE",
-  //         color: "#555",
-  //       },
-  //       {
-  //         text: "Very Good",
-  //         position: "INSIDE",
-  //         color: "#555",
-  //       },
-  //     ]'
-  //     :ringWidth="47"
-  //     :needleTransitionDuration="3333"
-  //     needleTransition="easeElastic"
-  //     needleColor="#a7ff83"
-  //     textColor="#d8dee9"
-  //   />
-  //   </div>
-  // `,
-  // created() {
-  //   setInterval(() => (this.toggle = !this.toggle), 1111);
-  // },
-  // data() {
-  //   return {
-  //     toggle: false
-  //   };
-  // },
-
+  components: { VueSpeedometer },
 };
 </script>
 
@@ -85,7 +74,8 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.auth-container{
+
+.auth-container {
   display: block !important;
 }
 </style>
