@@ -1,51 +1,49 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="white"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="./assets/mh-logo.png"
-          transition="scale-transition"
-          width="180"
-        />      
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
-    </v-main>
+    <NavBar v-if="user" />
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import { mapActions, mapGetters, mapMutations } from "vuex";
+import NavBar from "./components/NavBar";
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    NavBar
+},
+data: () => ({
+    //
+}),
+methods: {
+    ...mapActions(["fetchCurrentUser"]),
+    ...mapMutations(["CLOSE_SNACKBAR"]),
+  },
+computed: {
+    ...mapGetters(["snackbar", "user"]),
+ 
+  },
+  async mounted() {
+    await this.fetchCurrentUser();
+    if (this.user) {
+    
+      console.log(this.user)
+    }  
   },
 
-  data: () => ({
-    //
-  }),
+
 };
 </script>
+
+
+
+<style>
+:root {
+  --mh-blue: #1d336f;
+  --mh-green: #9ec64c;
+  --mh-orange: #dd9036;
+}
+
+</style>
