@@ -23,7 +23,7 @@
           >Learn More</a>
         </p>
       </v-col>
-<!-- <Gauge></Gauge> -->
+<Gauge></Gauge>
       <!-- <v-col
         class="mb-5"
         cols="12"
@@ -94,13 +94,13 @@
 
 <script>
 import SignIn from "./SignIn.vue"
-// import Gauge from "./Gauge.vue"
+import Gauge from "./Gauge.vue"
 
   export default {
     name: 'HelloWorld',
     components:{
       SignIn,
-      // Gauge
+      Gauge
     },
 
   }

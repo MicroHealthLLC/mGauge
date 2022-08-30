@@ -8,7 +8,7 @@ import {
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
 import vuetify from './plugins/vuetify'
-import VueSpeedometer from "vue-speedometer"
+// import VueSpeedometer from "vue-speedometer"
 
 Amplify.configure(awsconfig);
 
@@ -21,6 +21,5 @@ Vue.config.productionTip = false
 
 new Vue({
   vuetify,
-  VueSpeedometer,
   render: h => h(App)
 }).$mount('#app')
