@@ -20,7 +20,7 @@ export default {
     NavBar,
     SignIn,
     Gauge
-},
+  },
 
   data: () => ({
     //
