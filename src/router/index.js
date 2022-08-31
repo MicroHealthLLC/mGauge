@@ -11,57 +11,38 @@ const routes = [
     path: "/signin",
     name: "Signin",
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Signin.vue"),
+      import("../views/auth/Signin.vue"),
   },
   {
     path: "/signup",
     name: "SignUp",
     component: () =>
-      import(/* webpackChunkName: "signup" */ "../views/SignUp.vue"),
+      import("../views/auth/SignUp.vue"),
   },
   {
     path: "/verify",
     name: "SignUpVerify",
     props: true,
     component: () =>
-      import(/* webpackChunkName: "signup" */ "../views/SignUpVerify.vue"),
+      import("../views/auth/SignUpVerify.vue"),
   },
   {
-    path: "/gauges/sandbox",
-    name: "Sandbox",
+    path: "/reset-password",
+    name: "ResetPW",
     component: () =>
-      import(
-        /* webpackChunkName: "newCompetitions" */ "../components/Gauges/Sandbox.vue"
-      ),
-    meta: { requiresAuth: true},
-  },
-//   {
-//     path: "/reset-password",
-//     name: "ResetPassword",
-//     component: () =>
-//       import(/* webpackChunkName: "signup" */ "../views/ResetPassword.vue"),
-//   },
-//   {
-//     path: "/reset-password",
-//     name: "ResetPassword",
-//     component: () =>
-//       import(/* webpackChunkName: "signup" */ "../views/ResetPassword.vue"),
-//   },
-  {
-    path: "/",
-    redirect: "/home",
+      import("../views/auth/ResetPW.vue"),
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home,
-    meta: { requiresAuth: true },
-  },  
+    path: "/not-authorized",
+    name: "NoAuth",
+    component: () =>
+      import("../views/auth/NoAuth.vue"),
+  },
   {
     path: "/profile",
     name: "Profile",
     component: () =>
-      import(/* webpackChunkName: "profile" */ "../views/Profile.vue"),
+      import("../views/Profile.vue"),
     meta: { requiresAuth: true },
   },
 //   {
@@ -73,13 +54,23 @@ const routes = [
 //       ),
 //   },
   {
-    path: "/not-authorized",
-    name: "NoAuth",
+    path: "/gauges/sandbox",
+    name: "Sandbox",
     component: () =>
-      import(
-        /* webpackChunkName: "notAuthorized" */ "../views/NoAuth.vue"
-      ),
+      import("../components/Gauges/Sandbox.vue"),
+    meta: { requiresAuth: true},
   },
+  {
+    path: "/",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: Home,
+    meta: { requiresAuth: true },
+  },  
+  
 //   {
 //     path: "*",
 //     redirect: "/page-not-found",

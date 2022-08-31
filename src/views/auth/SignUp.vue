@@ -11,12 +11,12 @@
               >{{ error }}</v-alert
             >
             <v-card-title class="d-flex flex-column"
-              ><v-img src="../assets/gauge.jpg" max-width="300"></v-img>
+              ><v-img src="../../assets/gauge.jpg" max-width="300"></v-img>
               <p class="text-body-1">Create your <span class="bold">mGAUGE</span> account</p></v-card-title
             >
             <v-card-text>
               <v-form ref="signupform" v-model="valid">
-                <label>Email</label>
+                <label class="d-block text-left">Email</label>
                 <v-text-field
                   class="pt-0"
                   v-model="email"                 
@@ -42,7 +42,7 @@
                   required
                 ></v-text-field>
 
-                <label>Password</label>
+                <label class="d-block text-left">Password</label>
                 <v-text-field
                   class="pt-0"
                   v-model="password"
@@ -61,7 +61,6 @@
                   required
                   validate-on-blur
                 ></v-text-field>
-                <label>Email</label>
                 <v-text-field
                   class="pt-0"
                   v-model="phoneNumber"
@@ -97,7 +96,7 @@
   
   <script>
   import { mapActions, mapGetters } from "vuex";
-  import "./viewsStyles.css"
+  import "../viewsStyles.css"
 
   export default {
     name: "SignUp",

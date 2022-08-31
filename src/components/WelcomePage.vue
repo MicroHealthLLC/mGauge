@@ -2,8 +2,8 @@
   <v-sheet class="welcome-card" dark app>
     <div class="overlay">
     <v-container>
-    <v-row class="text-center">
-      <v-col cols="12 pb-0">
+      <v-row>
+      <v-col class="text-center">
         <!-- Fix: gaugePic class should give image a border-radius  -->
         <span class="gaugePic">
           <v-img
@@ -12,22 +12,37 @@
           contain
           height="125"
         />
-        </span>        
+      
+        <h1 class="display-2 font-weight-bold mb-3">
+          Welcome to mGauge
+        </h1>
+
+        <p class="subheading font-weight-regular">
+          An organizational performance tool to gauge, track,<br> and manage team performance. 
+          <a
+            href="https://community.vuetifyjs.com"
+            target="_blank"
+          >Learn More</a>
+        </p>   
+      </span>    
       </v-col>
+    
+    </v-row>  
+    <!-- <v-row class="text-center">
       <v-col class="mb-4 pt-0 mt-0">
         <h1 class="display-2 font-weight-bold mb-3">
           Welcome to mGauge
         </h1>
 
         <p class="subheading font-weight-regular">
-          An organizational performance tool to gauge, track,<br> and manage your teams performance. 
+          An organizational performance tool to gauge, track,<br> and manage team performance. 
           <a
             href="https://community.vuetifyjs.com"
             target="_blank"
           >Learn More</a>
         </p>
       </v-col>
-    </v-row>  
+    </v-row>   -->
   </v-container>
   </div>
   </v-sheet>
@@ -47,11 +62,14 @@ export default {
 
 <style scoped>
 .gaugePic{
-  border-radius: 1rem;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .overlay{
   background-color: rgba(0,	0, 0, 0.60);
-  height: 65vh;
+  height: 75vh;
   }
 .welcome-card {
    background: url(../assets/racing-team.jpg) no-repeat center center fixed; 
@@ -62,7 +80,7 @@ export default {
   /* min-height: 100%; */
   min-width: 1024px;
   width: 100%;
-  min-height: 65vh;
+  min-height: 75vh;
 }
 .mh-message {
   text-align: left;
