@@ -1,14 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import articleStore from "./modules/article-store";
 import authStore from "./modules/auth";
-// import competitionStore from "./modules/competition-store";
-// import eventStore from "./modules/event-store";
-// import goalStore from "./modules/goal-store";
-// import reminderStore from "./modules/reminder-store";
-// import videoStore from "./modules/video-store";
-// import preferencesStore from "./modules/preferences-store";
-// import watchedVideoStore from "./modules/watched-video-store";
 
 Vue.use(Vuex);
 
@@ -35,14 +27,6 @@ export default new Vuex.Store({
     loading: (state) => state.loading,
   },
   modules: {
-    // articleStore,
-       authStore,
-    // competitionStore,
-    // eventStore,
-    // goalStore,
-    // reminderStore,
-    // videoStore,
-    // preferencesStore,
-    // watchedVideoStore,
+      authStore,
   },
 });

@@ -1,7 +1,7 @@
 import Auth from "@aws-amplify/auth";
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Home from "../views/Home.vue";
+import Home from "../views/Home.vue";
 import store from "../store";
 
 Vue.use(VueRouter);
@@ -9,9 +9,9 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/signin",
-    name: "SignIn",
+    name: "Signin",
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/SignIn.vue"),
+      import(/* webpackChunkName: "login" */ "../views/Signin.vue"),
   },
   {
     path: "/signup",
@@ -19,13 +19,22 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "signup" */ "../views/SignUp.vue"),
   },
-//   {
-//     path: "/verify",
-//     name: "Verify",
-//     props: true,
-//     component: () =>
-//       import(/* webpackChunkName: "signup" */ "../views/Verify.vue"),
-//   },
+  {
+    path: "/verify",
+    name: "SignUpVerify",
+    props: true,
+    component: () =>
+      import(/* webpackChunkName: "signup" */ "../views/SignUpVerify.vue"),
+  },
+  {
+    path: "/gauges/sandbox",
+    name: "Sandbox",
+    component: () =>
+      import(
+        /* webpackChunkName: "newCompetitions" */ "../components/Gauges/Sandbox.vue"
+      ),
+    meta: { requiresAuth: true},
+  },
 //   {
 //     path: "/reset-password",
 //     name: "ResetPassword",
@@ -33,15 +42,21 @@ const routes = [
 //       import(/* webpackChunkName: "signup" */ "../views/ResetPassword.vue"),
 //   },
 //   {
-//     path: "/",
-//     redirect: "/home",
+//     path: "/reset-password",
+//     name: "ResetPassword",
+//     component: () =>
+//       import(/* webpackChunkName: "signup" */ "../views/ResetPassword.vue"),
 //   },
-//   {
-//     path: "/home",
-//     name: "Home",
-//     component: Home,
-//     meta: { requiresAuth: true },
-//   },  
+  {
+    path: "/",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: Home,
+    meta: { requiresAuth: true },
+  },  
   {
     path: "/profile",
     name: "Profile",
@@ -81,6 +96,8 @@ const router = new VueRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
+  console.log(to)
+  console.log(VueRouter)
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const requiresEditor = to.matched.some(
     (record) => record.meta.requiresEditor
@@ -113,3 +130,4 @@ router.beforeEach(async (to, from, next) => {
 });
 
 export default router;
+

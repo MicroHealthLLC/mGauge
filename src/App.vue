@@ -1,18 +1,27 @@
 <template>
   <v-app>
     <NavBar v-if="user" />
+    <v-main class="main-wrapper" app>
+      <WelcomePage v-if="$route.name == 'Home'" />
+      <!-- Router Container -->
+      <v-container>
+        <router-view />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import { mapActions, mapGetters, mapMutations } from "vuex";
+import WelcomePage from "./components/WelcomePage.vue";
 import NavBar from "./components/NavBar";
 
 export default {
   name: 'App',
 
   components: {
-    NavBar
+    NavBar,
+    WelcomePage
 },
 data: () => ({
     //

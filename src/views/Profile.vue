@@ -16,11 +16,6 @@
               Personal
             </v-tab>
   
-            <v-tab>
-              <v-icon left> mdi-account-star</v-icon>
-              Preferences
-            </v-tab>  
-  
   
             <v-tab-item>
               <v-card class="pl-5 pr-5 pb-5" flat>
@@ -73,7 +68,7 @@
                     </v-menu>
                   </v-form>
                 </v-card-text>
-                <v-btn @click="deleteWatchedVideos()">Reset Watched Videos</v-btn>
+             
                 <v-card-actions class="d-flex justify-end">
   
                   <v-btn @click="editProfile" class="px-10" color="primary" :block="$vuetify.breakpoint.xsOnly"
@@ -160,7 +155,6 @@
       ...mapGetters(["saving", "user"]),
     },
     mounted() {
-      this.fetchPreferences();
       this.given_name = this.user.attributes.given_name || "";
       this.family_name = this.user.attributes.family_name || "";
       this.phone_number = this.user.attributes.phone_number.replace("+1", "") || "";

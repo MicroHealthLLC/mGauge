@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+import vuetify from './plugins/vuetify'
 import router from "./router";
 import store from "./store";
 import { TiptapVuetifyPlugin } from "tiptap-vuetify";
@@ -8,13 +11,8 @@ import {
   defineCustomElements,
 } from '@aws-amplify/ui-components/loader';
 
-import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports';
-import vuetify from './plugins/vuetify'
-// import VueRouter from 'vue-router';
-    
-// Vue.use(VueRouter);
-// import VueSpeedometer from "vue-speedometer"
+
+
 
 Amplify.configure(awsconfig);
 
@@ -29,9 +27,9 @@ Vue.use(TiptapVuetifyPlugin, {
   iconsGroup: "mdi",
 });
 
-new Vue({
-  vuetify,
+new Vue({  
   router,
   store, 
-  render: h => h(App)
+  vuetify,
+  render: (h) => h(App)
 }).$mount('#app')
