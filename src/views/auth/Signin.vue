@@ -11,12 +11,12 @@
               >{{ error }}</v-alert
             >
             <v-card-title class="d-flex flex-column"
-              ><v-img src="../assets/gauge.jpg" max-width="300"></v-img>
+              ><v-img src="../../assets/gauge.jpg" max-width="300"></v-img>
               <h2 class="text-body-1"><span class="beWell">mGAUGE</span></h2></v-card-title
             >
             <v-card-text>
               <v-form ref="form" v-model="valid">
-                <label>Email</label>
+                <label class="d-block text-left">Email</label>
                 <v-text-field
                   class="pt-0"
                   v-model="username"                 
@@ -29,7 +29,7 @@
                   required
                   validate-on-blur
                 ></v-text-field>
-                <label>Password</label>
+                <label class="d-block text-left">Password</label>
                 <v-text-field
                   class="pt-0"
                   v-model="password"
@@ -57,7 +57,9 @@
                 No account? <router-link to="/signup">Create Account</router-link>
               </p>
             </v-card-actions>
+            <!-- <v-img class="shrink" contain src="../assets/mh-logo.png" max-width="180"></v-img> -->
           </v-card>
+         
         </div>
       </v-col>
     </v-row>
