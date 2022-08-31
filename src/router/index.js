@@ -9,9 +9,9 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/signin",
-    name: "Signin",
+    name: "SignIn",
     component: () =>
-      import(/* webpackChunkName: "login" */ "../views/Signin.vue"),
+      import(/* webpackChunkName: "login" */ "../views/SignIn.vue"),
   },
   {
     path: "/signup",
