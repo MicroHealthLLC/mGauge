@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import authStore from "./modules/auth";
+import gaugeStore from "./modules/gauge-store";
 
 Vue.use(Vuex);
 
@@ -28,5 +29,6 @@ export default new Vuex.Store({
   },
   modules: {
       authStore,
+      gaugeStore
   },
 });

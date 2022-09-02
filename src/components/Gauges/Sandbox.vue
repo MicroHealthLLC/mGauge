@@ -20,11 +20,11 @@
           color: "#555",
         },
       ]' />
-    <vue-speedometer class="row-4" :paddingVertical=10 :forceRender=true :value=85 :maxValue=100 :segments="25"
+    <vue-speedometer class="row-4" :paddingVertical=10 :forceRender=true :value=45 :maxValue=100 :segments="25"
       :needleHeightRatio=.6 needleColor="red" :ringWidth=210 :maxSegmentLabels=10 :width=500 startColor="white"
       endColor="black" :needleTransitionDuration="2000" needleTransition="easeQuadInOut" />
 
-    <vue-speedometer class="row-4" :value="toggle ? 49 : 51" :maxValue=100 :width=500 :needleHeightRatio=.9
+    <vue-speedometer class="row-4" :value="toggle ? 76 : 84" :maxValue=100 :width=500 :needleHeightRatio=.9
       needleColor="black" :paddingVertical=10 :ringWidth=110 :customSegmentStops='[0, 30, 45, 55, 70, 100]'
       :segmentColors='["tomato", "gold", "limegreen", "gold", "tomato"]' :customSegmentLabels='[
   {

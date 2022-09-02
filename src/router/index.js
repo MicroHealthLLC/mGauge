@@ -54,10 +54,17 @@ const routes = [
 //       ),
 //   },
   {
-    path: "/gauges/sandbox",
+    path: "/mgauge/sandbox",
     name: "Sandbox",
     component: () =>
       import("../components/Gauges/Sandbox.vue"),
+    meta: { requiresAuth: true},
+  },
+  {
+    path: "/mgauge/my-gauges",
+    name: "Gauges",
+    component: () =>
+      import("../components/Gauges/Gauges.vue"),
     meta: { requiresAuth: true},
   },
   {
