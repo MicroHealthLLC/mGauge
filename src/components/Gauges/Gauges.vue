@@ -1,8 +1,9 @@
 <template>
-<div :load="log(newGauge)">
+<div >
 <v-row class="center">
   <v-col cols="8" v-if="lastSavedGauge" class="text-center"> 
-       <h1 class="mb-3">{{lastSavedGauge.title}}</h1>
+       <h1 v-if="lastSavedGauge.title" class="mb-3">{{lastSavedGauge.title}}</h1>
+       <h1 v-else class="mb-3">{{newGauge.title}}</h1>
       <vue-speedometer class="row-4 mb-3" :value="lastSavedGauge.values[0].val_a" :maxValue=100 :width=700 :needleHeightRatio=.9
         needleColor="black" :paddingVertical=10 :ringWidth=110 :customSegmentStops='[0, 30, 45, 55, 70, 100]'
         :segmentColors='["tomato", "gold", "limegreen", "gold", "tomato"]' :customSegmentLabels='[
@@ -86,6 +87,7 @@
   <v-card
     class="mx-auto"
     max-width="400"
+   :disabled="saving" :loading="saving"
   >
    <v-form class="px-3" ref="form">
     <v-list-item two-line class="pl-0">
@@ -94,9 +96,19 @@
             <v-row>
                 <v-col
                 cols="6"
+                v-if="lastSavedGauge.title"
                   >
                 <v-text-field
                     v-model="lastSavedGauge.title"
+                    label="mGauge Name"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                cols="6"
+                v-else
+                  >
+                <v-text-field
+                    v-model="newGauge.title"
                     label="mGauge Name"
                 ></v-text-field>
                 </v-col>
@@ -234,7 +246,7 @@
       <v-icon>mdi-presentation</v-icon>
     </v-btn>
   </v-bottom-navigation>  
-  <v-dialog v-model="dialog" width="1000">
+  <!-- <v-dialog v-model="dialog" width="1000">
     <h1 class="mb-3">{{lastSavedGauge.title}}</h1>
       <vue-speedometer class="row-4 mb-3" :value="lastSavedGauge.values[0].val_a" :maxValue=100 :width=700 :needleHeightRatio=.9
         needleColor="black" :paddingVertical=10 :ringWidth=110 :customSegmentStops='[0, 30, 45, 55, 70, 100]'
@@ -272,7 +284,7 @@
             ]' />
         <label class="d-block text-left"><b>Comments:</b></label>
         <p class="mb-3 text-left">{{lastSavedGauge.comments}}</p>
-  </v-dialog>
+  </v-dialog> -->
     </div> 
   </template>
 
@@ -310,16 +322,21 @@
       
           try {
             if (this.lastSavedGauge) {
-              // console.log(this.goal.category)
+              console.log(this.newGauge)
+            console.log(this.lastSavedGauge)
+              let updatedTitle = ''
+              if(this.newGauge && this.newGauge.title){
+                updatedTitle = this.newGauge.title
+              } else updatedTitle = this.lastSavedGauge.title
               await this.updateGaugeById({
                 id: this.lastSavedGauge.id,
-                title: this.lastSavedGauge.title,
+                title: updatedTitle,
                 comments: this.lastSavedGauge.comments,
                 values: this.lastSavedGauge.values
               });
             } else {
-            console.log(this.gauge)
-             await this.addGauge(this.newGauge);
+            console.log(this.newGauge)
+            await this.addGauge(this.newGauge);
              this.$refs.form.reset();
             }
           }
@@ -331,7 +348,8 @@
         this.$refs.form.reset();
        },
        deployPresentation(){
-        this.dialog = true
+        // this.dialog = true
+        alert("Hi.  This is the mGauge presentation")
        },
         // async deleteGauge(id) {
         //   try {
@@ -345,25 +363,6 @@
         handleClick(e){
           console.log(e)
         },
-        openNewGoalForm() {
-          this.dialog = true;
-          if (this.$refs.goalform) {
-            this.$refs.goalform.resetValidation();
-          }
-          this.category = this.goal.category.toUpperCase()
-          this.goal = {       
-            category: "",
-            dueDate: "",
-            progress: 0,
-            stepCount: 1,
-            completedCount: 0,
-            title: "",
-            checklist: [{ title: "", isComplete: false }],
-          };
-        },
- 
-  
-   
       },
       computed: {
         ...mapGetters(["savedGauges", "saving"]),

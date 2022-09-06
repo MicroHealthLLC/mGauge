@@ -5,8 +5,16 @@
     "serviceName": "AppSync",
     "gqlSchemaPath": "C:\\Users\\JuanRivera\\MH Repos\\gauge-app\\amplify\\backend\\api\\gaugeapp\\schema.graphql",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "mode": "AWS_LAMBDA",
+      "lambdaFunction": "graphQlLambdaAuthorizer8123ba8c",
+      "ttlSeconds": "300"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authgaugeapp84d1f10e"
+      }
+    ]
   }
 }

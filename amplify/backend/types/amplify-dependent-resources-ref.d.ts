@@ -12,9 +12,16 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "gaugeapp": {
-            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
+        }
+    },
+    "function": {
+        "graphQlLambdaAuthorizer8123ba8c": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
         }
     }
 }
