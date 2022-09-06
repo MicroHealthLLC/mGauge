@@ -6,19 +6,19 @@ import vuetify from './plugins/vuetify'
 import router from "./router";
 import store from "./store";
 import { TiptapVuetifyPlugin } from "tiptap-vuetify";
-import {
+/* import {
   applyPolyfills,
   defineCustomElements,
-} from '@aws-amplify/ui-components/loader';
+} from '@aws-amplify/ui-components/loader'; */
 
 
 
 
 Amplify.configure(awsconfig);
 
-applyPolyfills().then(() => {
+/* applyPolyfills().then(() => {
   defineCustomElements(window);
-});
+}); */
 
 Vue.config.ignoredElements = [/amplify-\w*/];
 Vue.config.productionTip = false

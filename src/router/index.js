@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/signin",
-    name: "Signin",
+    name: "SignIn",
     component: () =>
       import("../views/auth/Signin.vue"),
   },
