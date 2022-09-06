@@ -14,6 +14,18 @@
     "categories": {
       "auth": {
         "gaugeapp84d1f10e": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d30t19km7frel7",
+          "type": "manual"
+        }
+      },
+      "function": {
+        "graphQlLambdaAuthorizer8123ba8c": {
+          "deploymentBucketName": "amplify-gaugeapp-dev-142302-deployment",
+          "s3Key": "amplify-builds/graphQlLambdaAuthorizer8123ba8c-4c4d51596e66714e4b4c-build.zip"
+        }
       }
     }
   }

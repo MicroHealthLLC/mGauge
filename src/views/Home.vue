@@ -37,13 +37,13 @@
             title: "mGAUGE Sandbox",
             body: "Explore and learn mGAUGES",
             img:   "../assets/gauge.jpg",
-            route: "/gauges/sandbox",
+            route: "/mgauge/sandbox",
           },
           {
             title: "mGAUGE Center (Coming Soon)",
-            body: "Create, share, and save mGAUGES",
+            body: "Create and present mGAUGES",
             img: "../assets/gauge.jpg",
-            route: "/gauges/sandbox",
+            route: "/mgauge/my-gauges",
           },
         //   {
         //     title: "Browse Fitness Videos",
