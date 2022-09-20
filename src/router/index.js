@@ -108,8 +108,10 @@ router.beforeEach(async (to, from, next) => {
     currentUserInfo = store.getters.user;
   } else {
     currentUserInfo = await Auth.currentUserInfo();
+    console.log(currentUserInfo)
     if (currentUserInfo) {
       const userCredentials = await Auth.currentAuthenticatedUser();
+      console.log(userCredentials)
       const groups =
         userCredentials.signInUserSession.accessToken.payload[
           "cognito:groups"

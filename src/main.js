@@ -44,8 +44,8 @@ Amplify.configure({
     oauth: {
       domain: "mhtest1.auth.us-east-1.amazoncognito.com",
       scope: ["email", "openid", "phone", "aws.cognito.signin.user.admin"],
-      redirectSignIn: "http://localhost:8080/",
-      redirectSignOut: "http://localhost:8080/",
+      redirectSignIn: "https://dev.d30t19km7frel7.amplifyapp.com/",
+      redirectSignOut: "https://dev.d30t19km7frel7.amplifyapp.com/",
       responseType: "code"
     }
   },

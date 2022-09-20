@@ -1,5 +1,6 @@
 <template>
-    <v-row>
+  <div></div>
+    <!-- <v-row>
      <v-col>
         <div class="d-flex justify-center align-center main-container" :load="log(test)">
           <v-card class="pt-0 pr-5 pb-5 pl-5" max-width="600" :loading="loading">
@@ -66,16 +67,16 @@
                 No account? <router-link to="/signup">Create Account</router-link>
               </p>
             </v-card-actions>
-            <!-- <v-img class="shrink" contain src="../assets/mh-logo.png" max-width="180"></v-img> -->
+            <v-img class="shrink" contain src="../assets/mh-logo.png" max-width="180"></v-img>
           </v-card>
          
         </div>
       </v-col>
-    </v-row>
+    </v-row> -->
   </template>
   
   <script>
-  import { mapActions, mapGetters } from "vuex";
+  //import { mapActions, mapGetters } from "vuex";
   import { Auth } from "aws-amplify";
   
   export default {
@@ -92,14 +93,14 @@
       };
     },
     methods: {
-      ...mapActions(["login"]),
+      /* ...mapActions(["login"]), */
       log(e){
         console.log(e)
       },
-      fedSignIn() {
+      /* fedSignIn() {
         Auth.federatedSignIn()
-      },
-      async userLogin() {
+      }, */
+      /* async userLogin() {
         if (!this.$refs.form.validate()) {
           return;
         }
@@ -115,11 +116,14 @@
           this.hasError = true;
           this.error = error.message;
         }
-      },
+      }, */
     },
     computed: {
-      ...mapGetters(["loading"]),
+      /* ...mapGetters(["loading"]), */
     },
+    mounted() {
+      Auth.federatedSignIn()
+    }
   };
   </script>
   
