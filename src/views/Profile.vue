@@ -116,8 +116,10 @@
       //   console.log(e)
       // },
       cleanPhoneNum(phoneNumber) {
-        let pn = phoneNumber.replace(/\D/g,'')
+        if (phoneNumber) {
+          let pn = phoneNumber.replace(/\D/g,'')
         return pn.length == 10 ? "+1".concat(pn) : "invalid"
+        }
       },
       async editProfile() {
         if (!this.$refs.profileform.validate()) {

@@ -53,6 +53,15 @@
                 block
                 >Login</v-btn
               >
+              <v-btn
+                color="var(--mh-orange)"
+                @click="fedSignIn"
+                :loading="loading"
+                :disabled="loading"
+                :dark="!loading"
+                block
+                >SSO</v-btn
+              >
               <p class="mt-4">
                 No account? <router-link to="/signup">Create Account</router-link>
               </p>
@@ -67,6 +76,7 @@
   
   <script>
   import { mapActions, mapGetters } from "vuex";
+  import { Auth } from "aws-amplify";
   
   export default {
     name: "Signin",
@@ -85,6 +95,9 @@
       ...mapActions(["login"]),
       log(e){
         console.log(e)
+      },
+      fedSignIn() {
+        Auth.federatedSignIn()
       },
       async userLogin() {
         if (!this.$refs.form.validate()) {
