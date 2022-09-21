@@ -24,7 +24,7 @@
       "function": {
         "graphQlLambdaAuthorizer8123ba8c": {
           "deploymentBucketName": "amplify-gaugeapp-dev-142302-deployment",
-          "s3Key": "amplify-builds/graphQlLambdaAuthorizer8123ba8c-4c4d51596e66714e4b4c-build.zip"
+          "s3Key": "amplify-builds/graphQlLambdaAuthorizer8123ba8c-616a5a503938614d4871-build.zip"
         }
       }
     }
