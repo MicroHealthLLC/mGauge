@@ -36,27 +36,6 @@ import {
     ]
   }
 }); */
-Amplify.configure({
-  Auth: {
-    region: "us-east-1",
-    userPoolId: "us-east-1_mgCjGj4q2",
-    userPoolWebClientId: "5g5osv7n7o5jqhaqe36b8mvddb",
-    oauth: {
-      domain: "mhtest1.auth.us-east-1.amazoncognito.com",
-      scope: ["email", "openid", "phone", "aws.cognito.signin.user.admin"],
-      redirectSignIn: "http://localhost:8080/",
-      redirectSignOut: "http://localhost:8080/",
-      responseType: "code"
-    }
-  },
-  API: {
-    endpoints: [
-      {
-        endpoint: "https://mhtest1.auth.us-east-1.amazoncognito.com/saml2/idpresponse"
-      }
-    ]
-  }
-});
 // Amplify.configure({
 //   Auth: {
 //     region: "us-east-1",
@@ -65,8 +44,8 @@ Amplify.configure({
 //     oauth: {
 //       domain: "mhtest1.auth.us-east-1.amazoncognito.com",
 //       scope: ["email", "openid", "phone", "aws.cognito.signin.user.admin"],
-//       redirectSignIn: "https://dev.d30t19km7frel7.amplifyapp.com/",
-//       redirectSignOut: "https://dev.d30t19km7frel7.amplifyapp.com/",
+//       redirectSignIn: "http://localhost:8080/",
+//       redirectSignOut: "http://localhost:8080/",
 //       responseType: "code"
 //     }
 //   },
@@ -78,6 +57,27 @@ Amplify.configure({
 //     ]
 //   }
 // });
+Amplify.configure({
+  Auth: {
+    region: "us-east-1",
+    userPoolId: "us-east-1_mgCjGj4q2",
+    userPoolWebClientId: "5g5osv7n7o5jqhaqe36b8mvddb",
+    oauth: {
+      domain: "mhtest1.auth.us-east-1.amazoncognito.com",
+      scope: ["email", "openid", "phone", "aws.cognito.signin.user.admin"],
+      redirectSignIn: "https://dev.d30t19km7frel7.amplifyapp.com/",
+      redirectSignOut: "https://dev.d30t19km7frel7.amplifyapp.com/",
+      responseType: "code"
+    }
+  },
+  API: {
+    endpoints: [
+      {
+        endpoint: "https://mhtest1.auth.us-east-1.amazoncognito.com/saml2/idpresponse"
+      }
+    ]
+  }
+});
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
