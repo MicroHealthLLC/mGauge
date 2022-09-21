@@ -37,8 +37,8 @@ computed: {
   async mounted() {
     await this.fetchCurrentUser();
     if (this.user) {
-      console.log(process)
       console.log(this.user)
+      console.log(`Env: ${process.env.NODE_ENV}`)
     }  
   },
 
