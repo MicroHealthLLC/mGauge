@@ -249,7 +249,7 @@
   <!-- <v-dialog v-model="dialog" width="1000">
     <h1 class="mb-3">{{lastSavedGauge.title}}</h1>
       <vue-speedometer class="row-4 mb-3" :value="lastSavedGauge.values[0].val_a" :maxValue=100 :width=700 :needleHeightRatio=.9
-        needleColor="black" :paddingVertical=10 :ringWidth=110 :customSegmentStops='[0, 30, 45, 55, 70, 100]'   
+        needleColor="black" :paddingVertical=10 :ringWidth=110 :customSegmentStops='[0, 30, 45, 55, 70, 100]' 
         :segmentColors='["tomato", "gold", "limegreen", "gold", "tomato"]' :customSegmentLabels='[
         {
         text: "Bad",
