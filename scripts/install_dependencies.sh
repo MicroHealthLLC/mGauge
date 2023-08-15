@@ -5,6 +5,7 @@ cd /var/www/mGauge
 
 # Update package manager (npm or yarn)
 npm install
+echo "NPM installed"
 
 # If you're using yarn:
 # yarn install
