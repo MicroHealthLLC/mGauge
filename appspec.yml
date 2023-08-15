@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /dist/index.html
+  - source: /server.js
     destination: /var/www/mGauge
 hooks:
   BeforeInstall:
