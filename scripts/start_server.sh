@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to your application's directory
-cd ..
+# cd ..
 
 # Start your Node.js server using Express
 # Replace 'router.js' with the appropriate entry point file
