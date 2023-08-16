@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports';
+//import awsconfig from './aws-exports';
+import awsExports from './aws-exports2';
 import vuetify from './plugins/vuetify'
 import router from "./router";
 import store from "./store";
@@ -14,7 +15,7 @@ import {
 
 
 
-Amplify.configure(awsconfig);
+Amplify.configure(awsExports);
 
 applyPolyfills().then(() => {
   defineCustomElements(window);
