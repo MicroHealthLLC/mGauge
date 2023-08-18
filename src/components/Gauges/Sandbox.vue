@@ -13,6 +13,8 @@
     <v-btn @click="addSegment(60)">Add segment 60</v-btn>
     <v-btn @click="addSegment(90)">Add segment 90</v-btn>
 
+    <p>This was deployed with CI/CD Pipeline 08/18/23</p>
+
     <!-- <vue-speedometer class="row-4" :paddingVertical=10 :paddingHorizontal=10 :forceRender=true :value=8 :maxValue=10
       :segments=6 :needleHeightRatio=.7 needleColor="red" :needleTransitionDuration="2000"
       needleTransition="easeQuadInOut"
